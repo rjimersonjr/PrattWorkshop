@@ -16,7 +16,7 @@ def main(argv):
             arrLine = line.split(",")
             audio_path = arrLine[0].strip()
             transcript = arrLine[1].strip()
-            duration = librosa.core.get_duration(filename=audio_path)
+            duration = librosa.core.get_duration(path=audio_path)
             metadata = {
                 "audio_filepath": audio_path,
                 "duration": duration,
