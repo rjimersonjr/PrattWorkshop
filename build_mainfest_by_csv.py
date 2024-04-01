@@ -15,7 +15,7 @@ def main(argv):
     Lines = csvFileOpen.readlines()
     with open(manifestFile, 'w', encoding='utf8') as fout:
         for line in Lines:
-            print("What is  line: " + line)
+            #print("What is  line: " + line)
             arrLine = line.split(",")
             audio_path = arrLine[0].strip()
             transcript = arrLine[1].strip()
