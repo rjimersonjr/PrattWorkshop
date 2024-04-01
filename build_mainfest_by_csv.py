@@ -1,5 +1,3 @@
-#!/usr/local/bin/python3.6
-
 import sys, argparse, json, os, librosa
 import soundfile as sf
 
@@ -15,14 +13,10 @@ def main(argv):
     Lines = csvFileOpen.readlines()
     with open(manifestFile, 'w', encoding='utf8') as fout:
         for line in Lines:
-            #print("What is  line: " + line)
             arrLine = line.split(",")
             audio_path = arrLine[0].strip()
             transcript = arrLine[1].strip()
-            #print("What is the audio_path: " + audio_path)
             duration = librosa.core.get_duration(filename=audio_path)
-            #f = sf.SoundFile(audio_path)
-            #lengthFile = len(f) / f.samplerate
             metadata = {
                 "audio_filepath": audio_path,
                 "duration": duration,
